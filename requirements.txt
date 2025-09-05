@@ -1,0 +1,14 @@
+# Requirements for RAG Zephyr Project
+torch
+transformers
+accelerate
+bitsandbytes
+sentence-transformers
+faiss-cpu
+langchain
+langchain-community
+python-dotenv
+langchain-huggingface
+jupyter
+ipywidgets
+hf-xet
