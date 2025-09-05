@@ -1,23 +1,25 @@
 # RAG Zephyr Project
 
-**Effortlessly build a Retrieval-Augmented Generation (RAG) system using Zephyr and LangChain, with GitHub issues as your knowledge base.**
+I built this project to explore how Retrieval-Augmented Generation (RAG) can make LLMs more reliable and context-aware. Instead of fine-tuning a model every time new information appears, I wanted a system that could **fetch relevant knowledge on the fly** and use it to answer queries more accurately.  
 
 ---
 
-##  Project Overview
+## Project Overview
 
-This project showcases a streamlined RAG pipeline that combines:
+At its core, this project connects a **lightweight LLM** with a **retriever backed by FAISS** to handle real-world data from GitHub issues. Here’s how it comes together:
 
-- A lightweight yet powerful LLM: **`HuggingFaceH4/zephyr-7b-beta`**  
-- A fast, in-memory retriever built using **LangChain** and **FAISS**  
-- GitHub issue data (both open and closed) as a real-world knowledge source
+- **Model**: `HuggingFaceH4/zephyr-7b-beta`, chosen for its speed and strong instruction-following ability.  
+- **Retriever**: FAISS, storing embeddings so the model can pull in the most relevant chunks at query time.  
+- **Knowledge Source**: GitHub issues (open + closed), which simulate a dynamic knowledge base that keeps changing.  
 
-It pulls relevant context at query time, preventing hallucination and ensuring fresh, on-point responses—no model fine-tuning required.
+The result is a system that doesn’t just generate generic answers—it uses fresh, specific context from GitHub discussions to ground its responses.  
 
 ---
 
-##  Why It Matters
+## Why I Built This
 
-Modern LLMs often lack awareness of emerging or proprietary content (e.g., newly opened GitHub issues). Fine-tuning is costly and can shift model behavior over time.
+One thing I noticed while experimenting with LLMs is that they’re often **out of date** or just **guess when they don’t know something**. That’s fine for small talk, but not if you want trustworthy answers.  
 
-**RAG solves this by dynamically retrieving embeddings as context**, so your model is always aware of the latest content. Plus, swapping out to a better LLM is seamless.
+Fine-tuning is one option, but it’s expensive and can even make the model worse if not done carefully. RAG, on the other hand, lets the model stay **plugged into external data sources** without retraining.  
+
+That’s why I put this together: to show how you can take a strong general model and give it domain knowledge instantly—whether that’s GitHub issues, documentation, or anything else.  
